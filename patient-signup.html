@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTrack PH - Patient Mobile Sign Up</title>
+    <link rel="stylesheet" href="css/patient-mobile.css">
+</head>
+<body class="mobile-auth" data-page="patient-signup">
+    <div class="auth-shell">
+        <div class="brand-block">
+            <h1>Create Patient Profile</h1>
+            <p>Register once so patients can use the mobile portal to book appointments, review health updates, and maintain their profile.</p>
+        </div>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Patient Sign Up</h2>
+                <p>This form creates the patient-facing mobile profile while keeping the existing staff portal separate.</p>
+            </div>
+
+            <div id="signupMessage" class="notice-bar info">Complete the fields below to build the patient account.</div>
+
+            <form id="patientSignupForm" class="form-stack">
+                <div class="input-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Juan Dela Cruz" required>
+                </div>
+
+                <div class="field-row">
+                    <div class="input-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" placeholder="name@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signupPhone">Phone</label>
+                        <input type="text" id="signupPhone" placeholder="09xx xxx xxxx" required>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="input-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signupBirthday">Birthday</label>
+                        <input type="date" id="signupBirthday" required>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="input-group">
+                        <label for="signupBloodType">Blood Type</label>
+                        <select id="signupBloodType" required>
+                            <option value="">Select</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="signupPhilhealth">PhilHealth No.</label>
+                        <input type="text" id="signupPhilhealth" placeholder="Optional">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="signupAddress">Address</label>
+                    <textarea id="signupAddress" placeholder="Barangay / street / purok" required></textarea>
+                </div>
+
+                <div class="field-row">
+                    <div class="input-group">
+                        <label for="signupEmergency">Emergency Contact</label>
+                        <input type="text" id="signupEmergency" placeholder="Name - mobile number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signupAllergies">Allergies</label>
+                        <input type="text" id="signupAllergies" placeholder="Optional">
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">Create Mobile Account</button>
+            </form>
+
+            <div class="auth-footer">
+                Already registered? <a class="text-link-btn" href="patient-login.html">Go to login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/patient-mobile.js"></script>
+</body>
+</html>
