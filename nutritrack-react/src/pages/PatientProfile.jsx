@@ -37,6 +37,7 @@ export default function PatientProfile() {
               <label>Full Name</label>
               <input type="text" defaultValue="Ana Dela Cruz" required />
             </div>
+            
             <div className="field-row">
               <div className="input-group">
                 <label>Email</label>
@@ -47,9 +48,47 @@ export default function PatientProfile() {
                 <input type="text" defaultValue="0917 123 4567" required />
               </div>
             </div>
+
+            <div className="field-row">
+              <div className="input-group">
+                <label>Birthday</label>
+                <input type="date" defaultValue="1994-08-15" required />
+              </div>
+              <div className="input-group">
+                <label>Blood Type</label>
+                <select defaultValue="O+" required>
+                  <option value="">Select</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
+            </div>
+
             <div className="input-group">
               <label>Address</label>
               <textarea defaultValue="Purok 3, Barangay San Isidro" required></textarea>
+            </div>
+
+            <div className="field-row">
+              <div className="input-group">
+                <label>Emergency Contact</label>
+                <input type="text" defaultValue="Jose Dela Cruz - 0918 765 4321" required />
+              </div>
+              <div className="input-group">
+                <label>PhilHealth No.</label>
+                <input type="text" defaultValue="12-345678901-2" />
+              </div>
+            </div>
+
+            <div className="input-group">
+              <label>Allergies / Notes</label>
+              <textarea defaultValue="Shellfish"></textarea>
             </div>
             
             <div className="inline-actions">
