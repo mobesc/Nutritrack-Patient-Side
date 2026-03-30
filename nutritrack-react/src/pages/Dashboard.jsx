@@ -3,12 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import '../styles/dashboard.css';
 
-// Import your icons directly (adjust paths if needed based on your assets folder structure)
-import crowdIcon from '../assets/crowd-of-users.png';
-import childIcon from '../assets/child.png';
-import pregnantIcon from '../assets/pregnant.png';
-import oldIcon from '../assets/old.png';
-
 export default function Dashboard() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -16,7 +10,6 @@ export default function Dashboard() {
   const chartInstance = useRef(null);
   const navigate = useNavigate();
 
-  // Handle Pie Chart Initialization
   useEffect(() => {
     if (chartInstance.current) {
       chartInstance.current.destroy();
@@ -58,7 +51,7 @@ export default function Dashboard() {
 
   return (
     <div className="app-container">
-      {/* Header */}
+      
       <div className="app-header">
         <div className="header-left">
           <button className="sidebar-toggle" onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>☰</button>
@@ -74,9 +67,8 @@ export default function Dashboard() {
         </div>
       </div>
       
-      {/* Main Content */}
       <div className="main-content">
-        {/* Sidebar */}
+        
         <div className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}>
           <div className="sidebar-header">
             <h3>Menu</h3>
@@ -102,35 +94,33 @@ export default function Dashboard() {
           </div>
         </div>
         
-        {/* Content Area */}
         <div className={`content-area ${sidebarCollapsed ? 'expanded' : ''}`}>
           <h2 className="page-title">NUTRITRACK DASHBOARD</h2>
           
-          {/* Stats Cards */}
           <div className="stats-grid">
             <div className="stat-card">
-              <div className="stat-icon"><img src={crowdIcon} alt="Total Patients" /></div>
+              <div className="stat-icon" style={{ fontSize: '40px' }}>👥</div>
               <div className="stat-details">
                 <div className="stat-value">1,234</div>
                 <div className="stat-label">Total Patients</div>
               </div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon"><img src={childIcon} alt="Total Children" /></div>
+              <div className="stat-icon" style={{ fontSize: '40px' }}>👶</div>
               <div className="stat-details">
                 <div className="stat-value">567</div>
                 <div className="stat-label">Total Children</div>
               </div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon"><img src={pregnantIcon} alt="Pregnant Women" /></div>
+              <div className="stat-icon" style={{ fontSize: '40px' }}>🤰</div>
               <div className="stat-details">
                 <div className="stat-value">89</div>
                 <div className="stat-label">Pregnant Women</div>
               </div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon"><img src={oldIcon} alt="Senior Citizens" /></div>
+              <div className="stat-icon" style={{ fontSize: '40px' }}>👵</div>
               <div className="stat-details">
                 <div className="stat-value">210</div>
                 <div className="stat-label">Senior Citizens</div>
@@ -138,7 +128,6 @@ export default function Dashboard() {
             </div>
           </div>
           
-          {/* Charts Row */}
           <div className="charts-calendar-row">
             <div className="chart-container">
               <h3>Patient Statistics</h3>
@@ -154,7 +143,6 @@ export default function Dashboard() {
               </div>
             </div>
             
-            {/* Calendar View */}
             <div className="calendar-container">
               <h3>Calendar View</h3>
               <div className="calendar-header">
@@ -166,19 +154,17 @@ export default function Dashboard() {
                 <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
               </div>
               <div className="calendar-days">
-                {/* Simplified for React Speed */}
                 <div className="day">1</div><div className="day">2</div><div className="day">3</div><div className="day">4</div><div className="day">5</div><div className="day">6</div><div className="day">7</div>
                 <div className="day">8</div><div className="day">9</div><div className="day">10</div><div className="day">11</div><div className="day">12</div><div className="day">13</div><div className="day">14</div>
                 <div className="day">15</div><div className="day">16</div><div className="day">17</div><div className="day">18</div><div className="day today">19</div><div className="day">20</div><div className="day">21</div>
               </div>
               <div className="calendar-events">
-                <div className="event-item">• 09:00 AM - Prenatal Checkup (3 patients)</div>
+                <div className="event-item">• 09:00 AM - Prenatal Checkup</div>
                 <div className="event-item">• 10:30 AM - Child Immunization</div>
               </div>
             </div>
           </div>
           
-          {/* Patient Table */}
           <div className="table-container">
             <h3>Patient Overview</h3>
             <table className="patient-table">
