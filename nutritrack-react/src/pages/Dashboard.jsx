@@ -1,3 +1,4 @@
+// src/pages/Dashboard.jsx
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Chart from 'chart.js/auto';
@@ -14,6 +15,18 @@ export default function Dashboard() {
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
+
+    // Add this state and useEffect in Dashboard.jsx
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+      // Get user from session storage
+      const user = sessionStorage.getItem('currentUser');
+      if (user) {
+        const userData = JSON.parse(user);
+        setUserName(userData.name || userData.username || 'User');
+      }
+    }, []);
     
     const ctx = chartRef.current;
     if (ctx) {
